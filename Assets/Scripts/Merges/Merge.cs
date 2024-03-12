@@ -7,24 +7,15 @@ public class Merge : MonoBehaviour
 {
     public GameObject Fruit;
     public GameObject Fruit2;
+    public Vector2 location;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollision2D(Collider2D other)
     {
-        if (other.gameObject == Fruit)
+        if (other.gameObject.CompareTag("1"))
         {
+            location = other.transform.position;
             Destroy(other.gameObject);
-            Destroy(Fruit);
-            Instantiate(Fruit2);
+            Instantiate(Fruit2, location, Quaternion.identity);
         }
     }
 }
