@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Merge5 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject Fruit5;
-    public GameObject Fruit6;
-    Vector2 location;
-    // Start is called before the first frame update
-    private void OnCollision2D(Collider2D other)
+    public bool isMerging;
+    public GameObject Fruit2;
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("5"))
-        {
-            location = other.transform.position;
-            Destroy(other.gameObject);
-            Destroy(Fruit5);
-            Instantiate(Fruit6, location, Quaternion.identity);
-        }
+        if (!other.gameObject.CompareTag("5")) return;
+        if (isMerging) return;
+        other.gameObject.GetComponent<Merge5>().isMerging = true;
+
+        Destroy(other.gameObject);
+        Destroy(gameObject);
+        other.collider.enabled = false;
+
+        Instantiate(Fruit2, transform.position, Quaternion.identity);
     }
 }

@@ -127,7 +127,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9095449636050962542}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -193,5 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880ddc8ada976164a89aed48b7ee5f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fruit3: {fileID: 9095449636050962542}
-  Fruit4: {fileID: 7485403060323251136, guid: 5736405a748960e4c964ee25551d5280, type: 3}
+  isMerging: 0
+  Fruit2: {fileID: 7485403060323251136, guid: 5736405a748960e4c964ee25551d5280, type: 3}
